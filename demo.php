@@ -240,39 +240,47 @@
 // }
 // bonjour('Marion');
 
-// function repondre_oui_non ($phrase) {
-//   while (true) {
-//     $reponse = readline($phrase . "(o)Oui/(n)Non ");
-//     if ($reponse === 'n') {
-//       return true;
-//     } elseif ($reponse === 'n') {
-//       return false;
-//     } else {
+function repondre_oui_non ($phrase) {
+  while (true) {      // Juste une boucle qui se stop à "n"
+    $reponse = readline($phrase . "(o)Oui/(n)Non ");
+    if ($reponse === 'n') {
+      return true;
+    } elseif ($reponse === 'n') {
+      return false;
+    } else {
 
-//     }
-//   }
-// }
-// $resultat = repondre_oui_non('Voulez vous continuer ?');
-// var_dump($resultat);
+    }
+  }
+}
+$resultat = repondre_oui_non('Voulez vous continuer ?');
+var_dump($resultat);
 
-// function demander_creneau($phrase = 'Veuillez entrer un créneau') {
-//   echo $phrase . "\n";
-//   while (true) {
-//     $ouverture = (int)readline("Heure d'ouverture : ");
-//     if ($ouverture >= 0 && $ouverture <= 23 ) {
-//       break;
-//     }
-//   }
-//   while (true) {
-//     $fermeture = (int)readline("Heure d'fermeture : ");
-//     if ($fermeture >= 0 && $fermeture <= 23 && $fermeture > $ouverture) {
-//       break;
-//     }
-//   }
-//   return [$ouverture, $fermeture];
-// }
-// $creneau = demander_creneau();
-// $creneau2 = demander_creneau('Veuillez entrer votre créneau');
-// var_dump($creneau, $creneau2);
+function demander_creneau($phrase = 'Veuillez entrer un créneau') {   //fct qui demande l'horaire d'ouverture / fermeture
+  echo $phrase . "\n";
+  while (true) {
+    $ouverture = (int)readline("Heure d'ouverture : ");
+    if ($ouverture >= 0 && $ouverture <= 23 ) {     //check si c'est un horaire possible
+      break;
+    }
+  }
+  while (true) {
+    $fermeture = (int)readline("Heure d'fermeture : ");
+    if ($fermeture >= 0 && $fermeture <= 23 && $fermeture > $ouverture) { //check si c'est un horaire possible
+      break;
+    }
+  }
+  return [$ouverture, $fermeture];        //Création d'un array d'un créneaux
+}
+$creneau = demander_creneau();  //on stocke ces créneaux dans une variable
+$creneau2 = demander_creneau('Veuillez entrer votre créneau'); //demande de deuxième créneau
+var_dump($creneau, $creneau2);
 
-// vidéo a 20.30
+
+// On peut aussi utiliser des fonctions dans d'autres fct.
+$creneaux = demander_creneaux('Entrez vos créneaux');
+
+function demander_creneaux($phrase = 'Voulez vous entrer un créneau ?')
+
+var_dump($creneaux);
+
+Vidéo a 22min
