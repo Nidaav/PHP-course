@@ -312,3 +312,26 @@
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     // PHP & HTML //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// PHP a la particularité de pouvoir être mélangé aisément à du code HTML pour le rendre dynamique
+/* Pour chaque ligne de PHP on adapte donc cette synthaxe : <?php ....... ?>
+Il existe des raccourcis pratiques : < ?php echo $title; ?>   =>   <?= $title ?> */
+/* Mais c'est très similaire à du ruby embraqué */
+
+// Les super globals ou super variables sont des fct accessibles partout dans notre script
+// $GLOBALS, $_SERVER, $_GET, $_POST, $_FILES, $_COOKIE, $_SESSION, $_REQUEST, $_ENV;
+/*  <?php print_r($server); ?> */
+// <?php
+// function nav_item (string $lien, string $titre): string {        //Cette fonction qui utilise une super variable permet de determiner l'affichage
+//   $classe = 'nav-item';                                         // en fct d'un parametre de cette variable (un peu comme une requete api)
+//   if ($_SERVER['SCRIPT_NAME'] === $lien) {
+//     $classe = $classe . 'active';
+//   }
+//   return '<li class="' . $classe . '">
+//     <a class="nav-link" href="' . $lien . '">
+//     </li>';
+// }
+
+// HEREDOC & NOWDOC
+// l'heredoc se caractérise par une synthaxe <<<EQT  (les 3 lettres sont arbitraires)
+// Vidéo a 25min
