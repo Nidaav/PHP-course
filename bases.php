@@ -240,47 +240,75 @@
 // }
 // bonjour('Marion');
 
-function repondre_oui_non ($phrase) {
-  while (true) {      // Juste une boucle qui se stop à "n"
-    $reponse = readline($phrase . "(o)Oui/(n)Non ");
-    if ($reponse === 'n') {
-      return true;
-    } elseif ($reponse === 'n') {
-      return false;
-    } else {
+// function repondre_oui_non ($phrase) {
+//   while (true) {      // Juste une boucle qui se stop à "n"
+//     $reponse = readline($phrase . "(o)Oui/(n)Non ");
+//     if ($reponse === 'n') {
+//       return true;
+//     } elseif ($reponse === 'n') {
+//       return false;
+//     } else {
 
-    }
-  }
-}
-$resultat = repondre_oui_non('Voulez vous continuer ?');
-var_dump($resultat);
+//     }
+//   }
+// }
+// $resultat = repondre_oui_non('Voulez vous continuer ?');
+// var_dump($resultat);
 
-function demander_creneau($phrase = 'Veuillez entrer un créneau') {   //fct qui demande l'horaire d'ouverture / fermeture
-  echo $phrase . "\n";
-  while (true) {
-    $ouverture = (int)readline("Heure d'ouverture : ");
-    if ($ouverture >= 0 && $ouverture <= 23 ) {     //check si c'est un horaire possible
-      break;
-    }
-  }
-  while (true) {
-    $fermeture = (int)readline("Heure d'fermeture : ");
-    if ($fermeture >= 0 && $fermeture <= 23 && $fermeture > $ouverture) { //check si c'est un horaire possible
-      break;
-    }
-  }
-  return [$ouverture, $fermeture];        //Création d'un array d'un créneaux
-}
-$creneau = demander_creneau();  //on stocke ces créneaux dans une variable
-$creneau2 = demander_creneau('Veuillez entrer votre créneau'); //demande de deuxième créneau
-var_dump($creneau, $creneau2);
+// function demander_creneau($phrase = 'Veuillez entrer un créneau') {   //fct qui demande l'horaire d'ouverture / fermeture
+//   echo $phrase . "\n";
+//   while (true) {
+//     $ouverture = (int)readline("Heure d'ouverture : ");
+//     if ($ouverture >= 0 && $ouverture <= 23 ) {     //check si c'est un horaire possible
+//       break;
+//     }
+//   }
+//   while (true) {
+//     $fermeture = (int)readline("Heure d'fermeture : ");
+//     if ($fermeture >= 0 && $fermeture <= 23 && $fermeture > $ouverture) { //check si c'est un horaire possible
+//       break;
+//     }
+//   }
+//   return [$ouverture, $fermeture];        //Création d'un array d'un créneaux
+// }
+// $creneau = demander_creneau();  //on stocke ces créneaux dans une variable
+// $creneau2 = demander_creneau('Veuillez entrer votre créneau'); //demande de deuxième créneau
+// var_dump($creneau, $creneau2);
+// // On peut aussi utiliser des fonctions dans d'autres fct.
+
+// On peut typer les paramètres  (string $phrase)
+// function demo (string $param): array {
+//   var_dump($param);
+// }
+
+// demo(1.2);
+//malgré le typage, php ne renvoi pas d'érreur, il fait une conversion implicite. Pour le rendre plus strict :
+// Si l'on indique declare(strict_types=1); au début de notre document, cela signifie que PHP ne fera plus de conversion implicite et que l'argument passé
+// à demo sera obligatoirement une string.
+  // function demo (): array {
+// }
+// On peut également typer le retour en indiquant avant l'ouverture des curly braces le type que l'on souhaite pour notre return
 
 
-// On peut aussi utiliser des fonctions dans d'autres fct.
-$creneaux = demander_creneaux('Entrez vos créneaux');
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // REQUIRE & INCLUDE //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-function demander_creneaux($phrase = 'Voulez vous entrer un créneau ?')
+// On peut utilise require ou include en début de fichier ou directement dans des fcts
 
-var_dump($creneaux);
+// include 'filename.php';
 
-Vidéo a 22min
+// // include vérifie que le fichier existe pour le lire, mais s'il ne le trouve pas, le reste du script se déroule.
+
+// require 'filename.php';
+
+// // La grosse différence est que require vérifie que le fichier existe, et s'il n'est pas présent plante tout le script.
+
+// require_once 'filename.php';
+
+// Permet de n'improter le fichier qu'une unique fois, pour éviter des pbs de multiples lectures de fct par exemple.
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // PHP & HTML //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
