@@ -334,4 +334,21 @@ Il existe des raccourcis pratiques : < ?php echo $title; ?>   =>   <?= $title ?>
 
 // HEREDOC & NOWDOC
 // l'heredoc se caractérise par une synthaxe <<<EQT  (les 3 lettres sont arbitraires)
-// Vidéo a 25min
+// nowdoc se caractérise par une synthaxe <<<'EQT' (les 3 lettres sont tjr arbitraires)
+// Pour reprendre l'exemple précedent :
+//   return '<li class="' . $classe . '">
+//     <a class="nav-link" href="' . $lien . '">
+//     </li>';
+// devient :
+//   return <<<HTML
+//   <li class="$classe">
+//     <a class="nav-link" href="$lien">$titre</a>
+//   </li>
+// HTML;        -> Il est important de ne pas laisser d'espace pour qu'Heredoc comprenne bien. (principal defaut)
+// Ca donne qqe chose de bcp plus lisible .
+
+
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    // FORMULAIRES //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// vidéo a 10 min
