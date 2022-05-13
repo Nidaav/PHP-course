@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $aDeviner = 150;
 $erreur = null;
 $succes = null;
@@ -28,3 +28,4 @@ if (isset($_GET['chiffre'])) {
   <input type="text" name="demo" value="test">
   <button type="submit">Devinez</button>
 </form>
+ -->
