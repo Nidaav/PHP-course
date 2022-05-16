@@ -365,4 +365,6 @@ define('CRENEAUX', [    //pour définir une constante
 var_dump(CRENEAUX);      // pas besoin d'use le $CRENEAUX pour utiliser les constantes
 
 date($format, $timestamp);
-// vidéo a 7:00 min
+// Construire le tableau inbtermédiaire
+// de Xh à Yh
+// Implode pour construire la phrase finale -> regarder la fct implode
