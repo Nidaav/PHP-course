@@ -365,6 +365,10 @@ define('CRENEAUX', [    //pour définir une constante
 var_dump(CRENEAUX);      // pas besoin d'use le $CRENEAUX pour utiliser les constantes
 
 date($format, $timestamp);
+
+// echo date('l jS \of F Y h:i:s A'); // affiche Monday 8th of August 2005 03:46:12 PM
+
+
 // Construire le tableau inbtermédiaire
 // de Xh à Yh
 // Implode pour construire la phrase finale -> regarder la fct implode
